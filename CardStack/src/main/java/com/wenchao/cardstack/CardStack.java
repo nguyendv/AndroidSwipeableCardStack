@@ -93,7 +93,6 @@ public class CardStack extends RelativeLayout {
 
     /**
      * 是否允许旋转
-     * <p/>
      * 设置后调用{@link #reset(boolean)} 来重新初始化布局
      *
      * @param enableRotation
@@ -312,6 +311,7 @@ public class CardStack extends RelativeLayout {
 
             @Override
             public boolean onTouch(View arg0, MotionEvent event) {
+                CardStack.this.requestDisallowInterceptTouchEvent(true);
                 dd.onTouchEvent(event);
                 return true;
             }
